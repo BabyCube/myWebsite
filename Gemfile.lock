@@ -1,24 +1,46 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    mustermann (1.1.1)
+    daemons (1.4.1)
+    eventmachine (1.2.7)
+    kgio (2.11.4)
+    mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
-    rack (2.1.1)
-    rack-protection (2.0.8.1)
+    nio4r (2.5.8)
+    passenger (6.0.15)
       rack
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rake (>= 0.8.1)
+    puma (6.0.0)
+      nio4r (~> 2.0)
+    rack (2.2.4)
+    rack-protection (2.2.3)
+      rack
+    raindrops (0.20.0)
+    rake (13.0.6)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.3)
+      mustermann (~> 2.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
-    tilt (2.0.10)
+    thin (1.8.1)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    tilt (2.0.11)
+    unicorn (6.1.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  passenger
+  puma
   sinatra
+  thin
+  unicorn
 
 BUNDLED WITH
    1.17.2
